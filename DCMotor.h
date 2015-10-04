@@ -4,7 +4,7 @@
 class DCMotor
 {
   public:
-    DCMotor(uint8_t m1enable, uint8_t m1input1, uint8_t m1input2, uint8_t m2enable, uint8_t m2input1, uint8_t m2input2, uint8_t speed);
+    DCMotor(uint8_t m1enable, uint8_t m1input1, uint8_t m1input2, uint8_t m1speed, uint8_t m2enable, uint8_t m2input1, uint8_t m2input2, uint8_t m2speed);
     void forward();
     void backward();
     void left();
@@ -15,10 +15,11 @@ class DCMotor
     uint8_t _m1enable;
     uint8_t _m1input1;
     uint8_t _m1input2;
+    uint8_t _m1speed;
     uint8_t _m2enable;
     uint8_t _m2input1;
     uint8_t _m2input2;
-    uint8_t _speed;
+    uint8_t _m2speed;
 };
 
 #endif

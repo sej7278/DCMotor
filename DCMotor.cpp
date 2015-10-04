@@ -3,15 +3,16 @@
 #include "DCMotor.h"
 
 // constructor
-DCMotor::DCMotor(uint8_t m1enable, uint8_t m1input1, uint8_t m1input2, uint8_t m2enable, uint8_t m2input1, uint8_t m2input2, uint8_t speed)
+DCMotor::DCMotor(uint8_t m1enable, uint8_t m1input1, uint8_t m1input2, uint8_t m1speed, uint8_t m2enable, uint8_t m2input1, uint8_t m2input2, uint8_t m2speed)
 {
     _m1enable = m1enable;
     _m1input1 = m1input1;
     _m1input2 = m1input2;
+    _m1speed  = m1speed;
     _m2enable = m2enable;
     _m2input1 = m2input1;
     _m2input2 = m2input2;
-    _speed    = speed;
+    _m2speed  = m2speed;
 
     // set pins as outputs
     pinMode(_m1enable, OUTPUT);
@@ -22,8 +23,8 @@ DCMotor::DCMotor(uint8_t m1enable, uint8_t m1input1, uint8_t m1input2, uint8_t m
     pinMode(_m2input2, OUTPUT);
 
     // set the speed of the motors between 0-255
-    analogWrite(_m1enable, _speed);
-    analogWrite(_m2enable, _speed);
+    analogWrite(_m1enable, _m1speed);
+    analogWrite(_m2enable, _m2speed);
 }
 
 void DCMotor::stop(void)
