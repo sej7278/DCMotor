@@ -3,7 +3,7 @@
 #include "DCMotor.h"
 
 // constructor
-DCMotor::DCMotor(uint8_t m1enable, uint8_t m1input1, uint8_t m1input2, uint8_t m1speed, uint8_t m2enable, uint8_t m2input1, uint8_t m2input2, uint8_t m2speed)
+DCMotor::DCMotor(int m1enable, int m1input1, int m1input2, int m1speed, int m2enable, int m2input1, int m2input2, int m2speed)
 {
     _m1enable = m1enable;
     _m1input1 = m1input1;
